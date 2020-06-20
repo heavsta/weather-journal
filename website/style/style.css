@@ -1,0 +1,206 @@
+/** MAIN */
+html {
+  background-image: linear-gradient(to bottom right, #EAC495, #9C967E);
+  color: #0E1E25;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-width: 300px;
+  overflow-x: hidden;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wallpaper {
+  display: block;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-image: url(../img/sunset.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+/** MIDDLE DIV **/
+#app {
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 700px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border: 1px solid #fff;
+  padding: 50px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom right, rgba(234, 196, 149, 0.514), rgba(156, 150, 126, 0.5));
+  text-align: center;
+}
+#app h1 {
+  font-family: "Passero One", sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#app label {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+#app input {
+  display: block;
+  height: 60px;
+  width: 320px;
+  margin: auto;
+  background: #F1F3F4;
+  color: #847F71;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+}
+#app input:focus {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+#app textarea {
+  display: block;
+  height: 120px;
+  width: 320px;
+  margin: auto;
+  background: #F1F3F4;
+  color: #847F71;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+}
+#app textarea:focus {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+}
+#app button {
+  width: 200px;
+  height: 50px;
+  background: #45423D;
+  color: #C17E6A;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px #444;
+  outline: none;
+  cursor: pointer;
+}
+#app button:hover {
+  background: #C17E6A;
+  color: #45423D;
+}
+#app .entryHolder {
+  background-color: #45423D;
+  color: #C17E6A;
+  font-size: 16px;
+  width: 90%;
+  height: 150px;
+  margin: auto;
+}
+
+/** ANIMATIONS **/
+.wallpaper,
+.holder-headline,
+.holder-zip,
+.holder-feel,
+#generate,
+.holder-entry {
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+  animation-fill-mode: both;
+  /* Tells the browser to use the "from" values before the animaiton, and to keep the "to" values after the animation has ended. Otherwise, the element would revert to their non-animated styles. */
+}
+
+.wallpaper {
+  animation-timing-function: ease-out;
+}
+.wallpaper.is-loaded {
+  animation-delay: 1s;
+  animation-name: zoomOut;
+}
+
+.holder-headline {
+  animation-name: slideUp;
+}
+
+.holder-zip {
+  animation-name: slideUp;
+  animation-delay: 500ms;
+}
+
+.holder-feel {
+  animation-name: slideUp;
+  animation-delay: 1000ms;
+}
+
+#generate {
+  animation-name: bounceIn;
+  animation-delay: 1500ms;
+}
+
+.holder-entry {
+  animation-name: slideDown;
+  animation-delay: 2000ms;
+}
+
+/** KEYFRAMES **/
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

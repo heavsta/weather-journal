@@ -1,0 +1,16 @@
+{
+  "name": "weather-journal",
+  "version": "1.0.0",
+  "description": "using the OpenWeatherMap API",
+  "main": "server.js",
+  "scripts": {
+    "sass": "sass --watch ./website/sass/style.scss:./website/style/style.css"
+  },
+  "author": "Heavsta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
