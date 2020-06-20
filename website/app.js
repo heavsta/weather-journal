@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Personal API Key for OpenWeatherMap API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&appid=8d409df75ab1a756b861b595af9fae58';
+let apiKey = '&units=imperial&appid=8d409df75ab1a756b861b595af9fae58';
 
 // create new date instance
 let d = new Date();
@@ -45,7 +45,7 @@ document.getElementById('generate').addEventListener('click', performAction);
 /* Function called by event listener */
 function performAction(e) {
     const zipCode = document.getElementById('zip').value;
-    const content = document.getElementById('content').value;
+    const content = document.getElementById('feelings').value;
     getWeatherData(baseURL, zipCode, apiKey)
     .then(function(data) {
         console.log(data);
@@ -55,9 +55,7 @@ function performAction(e) {
             content: content
         })
     })
-    .then(
-        updateUI()
-    )
+    .then( ()=> updateUI());
 
 }
 
@@ -99,10 +97,9 @@ const updateUI = async () => {
     try {
         const allData = await request.json()
         console.log(allData);
-        var index = allData.length - 1;
-        document.getElementById('date').innerHTML = 'Today is ' + allData[index].date;
-        document.getElementById('temp').innerHTML = 'The temperature is currently of ' + allData[index].temp;
-        document.getElementById('content').innerHTML = 'How you feel : ' + allData[index].content;
+        document.getElementById('date').innerHTML = 'Today is : ' + allData.date;
+        document.getElementById('temp').innerHTML = 'Temperature : ' + allData.temp + '°F';
+        document.getElementById('content').innerHTML = 'Mood : ' + allData.content;
     }catch(error) {
         console.log("error in UI rendering", error);
     }
