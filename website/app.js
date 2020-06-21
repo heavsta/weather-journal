@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
 /* UDACITY PROJECT */
 
 // Personal API Key for OpenWeatherMap API
-let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&units=imperial&appid=8d409df75ab1a756b861b595af9fae58';
+const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+const apiKey = '&units=imperial&appid=8d409df75ab1a756b861b595af9fae58';
 
 // create new date instance
 let d = new Date();
